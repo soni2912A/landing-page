@@ -84,11 +84,11 @@ const Stats = () => {
             style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 30%, #2563eb 60%, #3b82f6 100%)' }}
           >
             <div className="text-center">
-              <div className="flex items-end gap-2 justify-center mb-4">
+              <div className="flex items-end gap-1.5 sm:gap-2 justify-center mb-4">
                 {[40, 65, 55, 80, 70, 90, 85].map((h, i) => (
                   <motion.div
                     key={i}
-                    className="w-8 rounded-t-md"
+                    className="w-6 sm:w-8 rounded-t-md"
                     initial={{ height: 0 }}
                     animate={inView ? { height: `${h}px` } : {}}
                     transition={{ duration: 0.7, delay: 0.5 + i * 0.08, ease: 'easeOut' }}

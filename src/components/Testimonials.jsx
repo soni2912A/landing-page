@@ -71,7 +71,7 @@ const Testimonials = () => {
                   {visible.map((t, i) => (
                     <motion.div
                       key={`${active}-${i}`}
-                      className="testimonial-card bg-white rounded-2xl p-8 border border-slate-100"
+                      className="testimonial-card bg-white rounded-2xl p-8 border border-slate-100 shadow-sm"
                       initial={{ opacity: 0, x: dir * 40 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -dir * 40 }}
@@ -110,28 +110,33 @@ const Testimonials = () => {
           <div className="flex justify-center gap-3 mt-8">
             <motion.button
               onClick={() => go(-1)}
-              className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500"
+              className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 cursor-pointer hover:bg-white"
               whileHover={{ borderColor: '#4361ee', color: '#4361ee', scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              aria-label="Previous Testimonial"
             >
               <ChevronLeft size={18} />
             </motion.button>
+            
             <div className="flex gap-2 items-center">
               {testimonials.map((_, i) => (
                 <motion.button
                   key={i}
                   onClick={() => { setDir(i > active ? 1 : -1); setActive(i) }}
-                  className={`h-2 rounded-full transition-colors duration-300 ${i === active ? 'bg-brand-500' : 'bg-slate-300'}`}
+                  className={`h-2 rounded-full transition-colors duration-300 cursor-pointer ${i === active ? 'bg-brand-500' : 'bg-slate-300'}`}
                   animate={{ width: i === active ? 20 : 8 }}
                   transition={{ type: 'spring', stiffness: 300 }}
+                  aria-label={`Go to testimonial ${i + 1}`}
                 />
               ))}
             </div>
+            
             <motion.button
               onClick={() => go(1)}
-              className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500"
+              className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 cursor-pointer hover:bg-white"
               whileHover={{ borderColor: '#4361ee', color: '#4361ee', scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              aria-label="Next Testimonial"
             >
               <ChevronRight size={18} />
             </motion.button>

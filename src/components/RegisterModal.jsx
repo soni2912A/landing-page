@@ -69,7 +69,8 @@ const RegisterModal = ({ onClose }) => {
 
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all duration-200"
+          className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all duration-200 cursor-pointer"
+          aria-label="Close modal"
         >
           <X size={16} />
         </button>
@@ -154,7 +155,7 @@ const RegisterModal = ({ onClose }) => {
               </div>
               <button
                 onClick={onClose}
-                className="mt-6 w-full bg-brand-500 hover:bg-brand-600 text-white font-medium py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-500/30 active:scale-95"
+                className="mt-6 w-full bg-brand-500 hover:bg-brand-600 text-white font-medium py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-500/30 active:scale-95 cursor-pointer"
               >
                 Back to Site
               </button>
@@ -166,7 +167,7 @@ const RegisterModal = ({ onClose }) => {
               {step > 0 && (
                 <button
                   onClick={() => setStep(s => s - 1)}
-                  className="flex-1 py-3 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium hover:border-slate-300 transition-all duration-200"
+                  className="flex-1 py-3 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium hover:border-slate-300 transition-all duration-200 cursor-pointer"
                 >
                   Back
                 </button>
@@ -174,7 +175,7 @@ const RegisterModal = ({ onClose }) => {
               <button
                 onClick={next}
                 disabled={loading}
-                className="flex-1 group flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 disabled:bg-brand-400 text-white font-medium py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-500/30 active:scale-95"
+                className="flex-1 group flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 disabled:bg-brand-400 text-white font-medium py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-500/30 active:scale-95 cursor-pointer"
               >
                 {loading ? (
                   <><Loader2 size={16} className="animate-spin" /> Submitting...</>
@@ -190,8 +191,8 @@ const RegisterModal = ({ onClose }) => {
           {!submitted && (
             <p className="text-center text-xs text-slate-400 mt-4">
               By signing up you agree to our{' '}
-              <span className="text-brand-500 cursor-pointer hover:underline">Terms</span> &{' '}
-              <span className="text-brand-500 cursor-pointer hover:underline">Privacy Policy</span>
+              <a href="https://google.com" target="_blank" rel="noopener noreferrer" className="text-brand-500 cursor-pointer hover:underline">Terms</a> &{' '}
+              <a href="https://google.com" target="_blank" rel="noopener noreferrer" className="text-brand-500 cursor-pointer hover:underline">Privacy Policy</a>
             </p>
           )}
         </div>

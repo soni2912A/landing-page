@@ -15,10 +15,10 @@ const FAQ = () => {
   return (
     <section className="py-24 bg-white" id="contact">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           <motion.div
-            className="rounded-2xl aspect-square max-h-96 shadow-lg shadow-brand-500/10 overflow-hidden"
+            className="rounded-2xl aspect-square max-h-80 sm:max-h-96 shadow-lg shadow-brand-500/10 overflow-hidden w-full"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -32,29 +32,34 @@ const FAQ = () => {
             />
           </motion.div>
 
-        
+          
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="w-full"
           >
             <p className="text-brand-500 text-sm font-semibold uppercase tracking-widest mb-3">Got Questions?</p>
             <h2 className="font-display text-4xl font-bold text-slate-900 mb-8">Frequently asked questions</h2>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               {faqs.map((faq, i) => (
                 <motion.div
                   key={i}
-                  className={`border rounded-xl overflow-hidden ${open === i ? 'border-brand-500/30 bg-brand-50' : 'border-slate-200 bg-white'}`}
+                  className={`border rounded-xl overflow-hidden transition-all duration-200 ${
+                    open === i 
+                      ? 'border-brand-500/30 bg-brand-50 shadow-md shadow-brand-500/5' 
+                      : 'border-slate-200 bg-white hover:border-slate-300'
+                  }`}
                   layout
                   transition={{ layout: { duration: 0.3 } }}
                 >
                   <button
-                    className="w-full flex items-center justify-between p-5 text-left"
+                    className="w-full flex items-center justify-between p-5 text-left cursor-pointer select-none"
                     onClick={() => setOpen(open === i ? -1 : i)}
                   >
-                    <span className={`font-medium text-sm leading-snug pr-4 ${open === i ? 'text-brand-500' : 'text-slate-800'}`}>
+                    <span className={`font-semibold text-sm sm:text-base leading-snug pr-4 ${open === i ? 'text-brand-500' : 'text-slate-800'}`}>
                       {faq.q}
                     </span>
                     <motion.span
