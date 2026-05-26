@@ -37,43 +37,44 @@ const WhyUs = () => (
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        <FadeIn direction="left" delay={0.1}>
-          <div className="grid grid-cols-2 gap-4">
-            <motion.div
-              className="img-placeholder rounded-2xl row-span-2 shadow-lg shadow-brand-500/10 col-span-1"
-              style={{ gridRow: 'span 2', minHeight: '280px' }}
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: 'spring', stiffness: 200 }}
-            >
-              <div className="h-full min-h-[240px] flex items-center justify-center">
-                <div className="text-brand-500 opacity-30">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor">
-                    <rect x="4" y="4" width="18" height="18" rx="3"/>
-                    <rect x="26" y="4" width="18" height="18" rx="3" opacity="0.5"/>
-                    <rect x="4" y="26" width="18" height="18" rx="3" opacity="0.5"/>
-                    <rect x="26" y="26" width="18" height="18" rx="3"/>
-                  </svg>
-                </div>
-              </div>
-            </motion.div>
-            {[0, 1].map(i => (
-              <motion.div
-                key={i}
-                className="img-placeholder rounded-2xl aspect-video shadow-md shadow-brand-500/10"
-                whileHover={{ scale: 1.04 }}
-                transition={{ type: 'spring', stiffness: 200 }}
-              >
-                <div className="h-full min-h-[110px] flex items-center justify-center">
-                  <div className="text-brand-500 opacity-30">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
-                      {i === 0 ? <rect width="32" height="32" rx="4"/> : <circle cx="16" cy="16" r="12" opacity="0.5"/>}
-                    </svg>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </FadeIn>
+      <FadeIn direction="left" delay={0.1}>
+
+<div className="grid grid-cols-2 gap-4">
+  <motion.div
+    className="rounded-2xl overflow-hidden shadow-lg shadow-brand-500/10 row-span-2"
+    whileHover={{ scale: 1.03 }}
+  >
+    <img
+      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
+      alt="Team collaboration"
+      className="w-full h-full object-cover"
+    />
+  </motion.div>
+
+  <motion.div
+    className="rounded-2xl overflow-hidden shadow-lg shadow-brand-500/10"
+    whileHover={{ scale: 1.03 }}
+  >
+    <img
+      src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+      alt="Analytics dashboard"
+      className="w-full h-full object-cover"
+    />
+  </motion.div>
+
+  <motion.div
+    className="rounded-2xl overflow-hidden shadow-lg shadow-brand-500/10"
+    whileHover={{ scale: 1.03 }}
+  >
+    <img
+      src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
+      alt="Mobile app UI"
+      className="w-full h-full object-cover"
+    />
+  </motion.div>
+</div>
+
+</FadeIn>
 
       
         <div>

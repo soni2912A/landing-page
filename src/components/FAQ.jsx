@@ -18,23 +18,18 @@ const FAQ = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           <motion.div
-            className="img-placeholder rounded-2xl aspect-square max-h-96 shadow-lg shadow-brand-500/10"
+            className="rounded-2xl aspect-square max-h-96 shadow-lg shadow-brand-500/10 overflow-hidden"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.02 }}
           >
-            <div className="h-full min-h-[320px] flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-brand-500 opacity-20 mb-4">
-                  <svg width="72" height="72" viewBox="0 0 72 72" fill="currentColor">
-                    <path d="M36 12C22.7 12 12 22.7 12 36s10.7 24 24 24 24-10.7 24-24S49.3 12 36 12zm-2 36v-4h4v4h-4zm4-8h-4c0-6 6-7 6-12 0-3.3-2.7-6-6-6s-6 2.7-6 6h-4c0-5.5 4.5-10 10-10s10 4.5 10 10c0 6-6 7-6 12z"/>
-                  </svg>
-                </div>
-                <p className="text-brand-500 text-sm font-medium opacity-40">FAQ Visual</p>
-              </div>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+              alt="Business consultation"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
 
         
